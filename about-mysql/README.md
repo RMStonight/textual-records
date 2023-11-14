@@ -5,13 +5,13 @@
 获取指定版本的mysql镜像
 
 ```sh
-docker pull mysql:8.0.33
+docker pull mysql:8.0
 ```
 
 创建docker容器，指定3306端口以及root密码1
 
 ```sh
-docker run --name mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=1 -d mysql:8.0.33
+docker run --name mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=1 -d mysql:8.0
 ```
 
 A.进入容器-->容器中启动mysql客户端
