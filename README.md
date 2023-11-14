@@ -4,6 +4,6 @@
 
 ### 当前列表
 
-* git基本指令[1]
+* [git基本指令]
 
-[1]: ./about-git/
+[git基本指令]: ./about-git/
