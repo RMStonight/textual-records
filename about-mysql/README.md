@@ -1,31 +1,6 @@
 # mysql学习记录
 
-## docker中的安装使用
-
-获取指定版本的mysql镜像
-
-```sh
-docker pull mysql:8.0
-```
-
-创建docker容器，指定3306端口以及root密码1
-
-```sh
-docker run --name mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=1 -d mysql:8.0
-```
-
-A.进入容器-->容器中启动mysql客户端
-
-```sh
-docker exec -it mysql /bin/bash
-mysql -u root -p
-```
-
-B.直接进入mysql客户端
-
-```sh
-docker exec -it mysql mysql -uroot -p
-```
+[docker相关点击此处](#docker中的安装使用)
 
 ## 基础知识
 
@@ -41,6 +16,8 @@ SQL分类
 | [DCL](#dcl) | Data Control Language | 数据控制语言，用来创建数据库用户、控制数据库的访问权限 |
 
 ### DDL
+
+[返回](#基础知识)
 
 #### 数据库操作
 
@@ -115,6 +92,8 @@ drop table <name>
 
 ### DML
 
+[返回](#基础知识)
+
 #### 添加数据
 
 ```sh
@@ -163,4 +142,35 @@ delete from employee;
 
 ### DQL
 
+[返回](#基础知识)
+
 ### DCL
+
+[返回](#基础知识)
+
+## docker中的安装使用
+
+获取指定版本的mysql镜像
+
+```sh
+docker pull mysql:8.0
+```
+
+创建docker容器，指定3306端口以及root密码1
+
+```sh
+docker run --name mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=1 -d mysql:8.0
+```
+
+A.进入容器-->容器中启动mysql客户端
+
+```sh
+docker exec -it mysql /bin/bash
+mysql -u root -p
+```
+
+B.直接进入mysql客户端
+
+```sh
+docker exec -it mysql mysql -uroot -p
+```
