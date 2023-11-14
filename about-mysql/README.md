@@ -29,6 +29,8 @@ docker exec -it mysql mysql -uroot -p
 
 ## 基础知识
 
+学习链接：<https://www.bilibili.com/video/BV1Kr4y1i7ru?p=15&vd_source=9504fc54477a587558fbab1417ea6a08>
+
 SQL分类
 
 | 分类 | 全称 | 说明 |
