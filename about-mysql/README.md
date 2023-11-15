@@ -267,6 +267,111 @@ select * from emp where idcard like '%X';
 select * from emp where idcard like '_________________X';
 ```
 
+#### 聚合函数
+
+-- 所有null值不参与聚合运算
+
+统计该企业员工数量
+
+```sh
+select count(*) from emp;
+select count(id) from emp;
+select count(idcard) from emp;
+```
+
+统计该企业员工的平均年龄
+
+```sh
+select avg(age) from emp;
+```
+
+统计该企业员工的最大年龄
+
+```sh
+select max(age) from emp;
+```
+
+统计该企业员工的最小年龄
+
+```sh
+select min(age) from emp;
+```
+
+统计西安地区员工的年龄之和
+
+```sh
+select sum(age) from emp where workaddress = '西安';
+```
+
+#### 分组查询
+
+-- 执行顺序: where > 聚合函数 > having
+-- 分组之后，查询的字段一般为聚合函数和分组字段, 查询其他字段无任何意义
+
+根据性别分组,统计男性员工 和 女性员工的数量
+
+```sh
+select gender,count(*) from emp group by gender;
+```
+
+根据性别分组,统计男性员工 和 女性员工的平均年龄
+
+```sh
+select gender,avg(age) from emp group by gender;
+```
+
+查询年龄小于45的员工, 并根据工作地址分组,获取员工数量大于等于3的工作地址
+
+```sh
+select workaddress,count(*) from emp where age < 45 group by workaddress having count(*) >= 3;
+```
+
+-- 特殊操作，在使用group by时如果不能显示其他字段,需要修改sql_mode
+
+```sh
+select @@global.sql_mode;
+SET sql_mode=(SELECT REPLACE(@@sql_mode,'ONLY_FULL_GROUP_BY',''));
+```
+
+#### 排序查询
+
+根据年龄对公司的员工进行升序排序
+
+```sh
+select * from emp order by age;
+```
+
+根据入职时间，对员工进行降序排序
+
+```sh
+select * from emp order by entrydate desc;
+```
+
+根据年龄对公司的员工进行升序排序，年龄相同，再按入职时间进行降序排序
+
+```sh
+select * from emp order by age, entrydate desc;
+```
+
+#### 分页查询
+
+-- select 字段列表 from 表名 limit 起始索引，查询记录数；
+查询第1页员工数据，每页显示10条记录
+
+```sh
+select * from emp limit 0,10;
+select * from emp limit 10;
+```
+
+查询第2页员工数据，每页展示10条记录
+
+```sh
+select * from emp limit 10,10;
+```
+
+执行顺序：
+from 表名 > where 条件列表 > group by 分组字段列表 > having 分组后条件列表 > select 字段列表 > order by 排序字段列表 > limit 分页参数
+
 ### DCL
 
 [返回](#基础知识)
