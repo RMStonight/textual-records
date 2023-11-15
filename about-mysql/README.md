@@ -374,7 +374,53 @@ from 表名 > where 条件列表 > group by 分组字段列表 > having 分组�
 
 ### DCL
 
+#### 用户管理
+
 [返回](#基础知识)
+
+创建用户 itcast，只能够在当前主机hocalhost访问，密码123456
+
+```sh
+create user 'itcast'@'localhost' identified by '123456';
+```
+
+创建用户heima，可以在任意主机访问该数据库，密码123456
+
+```sh
+create user 'heima'@'%' identified by '123456';
+```
+
+修改用户 heima 的访问密码为 1234
+
+```sh
+alter user 'heima'@'%' identified with mysql_native_password by '1234';
+```
+
+删除itcast@hlocalhost用户
+
+```sh
+drop user 'itcast'@'localhost';
+```
+
+#### 权限管理
+
+查询权限
+
+```sh
+show grants for 'heima'@'%';
+```
+
+授予权限
+
+```sh
+grant all on itcast.* to 'heima'@'%';
+```
+
+撤销权限
+
+```sh
+revoke all on itcast.* from 'heima'@'%';
+```
 
 ## docker中的安装使用
 
