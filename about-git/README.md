@@ -1,8 +1,8 @@
 # git工具（GitHub）
 
-## 1.两种方式在本地文件夹构建git环境(使用ssh的方式)
+## 1.两种方式在本地文件夹构建git环境(使用ssh连接)
 
-具体ssh方式参照：[CSDN]
+具体ssh连接参照：[CSDN]
 
 ### 方式一：git clone下载Github远程仓库的完整项目，包含git环境
 
