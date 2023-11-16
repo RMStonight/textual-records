@@ -12,15 +12,20 @@
 git clone git@github.com:xxxxx.git
 ```
 
-### 方式二：在本地的文件夹中创建一个git环境
+### 方式二：在本地的文件夹中创建一个git环境（并把已有的工程同步到新建的github仓库）
+
+Github新建一个仓库
+git pull时，本地工程尽量不要有与上述新建仓库时附带的文件重名，否则可能要解决冲突
+git push时，如果本地仓库和远程仓库的分支不同名，需要手动分别指定
 
 ```sh
-git echo "# A readme file" >> README.md
 git init
-git add README.md
-git commit -m "first commit"
 git remote add origin git@github.com:xxxxx.git
-git push -u origin <main、master>
+git pull origin <branch_remote>
+git add .
+git commit -m "first commit"
+git push origin <branch_local>:<branch_remote>
+git push origin <branch_same>
 ```
 
 ## 2.修改本地的代码
@@ -35,7 +40,8 @@ git commit -m "提交描述"
 ## 4.将修改后的代码推送到远程仓库
 
 ```sh
-git push origin <main、master>
+git push origin <branch_local>:<branch_remote>
+git push origin <branch_same>
 ```
 
 ## 5.特殊操作
