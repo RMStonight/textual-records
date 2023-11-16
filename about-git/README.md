@@ -28,6 +28,16 @@ git push origin <branch_local>:<branch_remote>
 git push origin <branch_same>
 ```
 
+注：_本地的各个分支（branch）可能与远程仓库branch不同名，数量也不同，所以git pull和git push指令都应该分别指定本地和远程branch。除非已经使用-u操作指定了本地的某个branch和远程的某个branch进行绑定_
+
+例如，如果远程仓库存在A,B,C分支，本地仓库存在1，2分支，希望将远程的B和本地的1绑定，那么可以如下操作：
+
+```sh
+git push -u origin 1:B
+```
+
+之后，当位于本地的分支1时，只需git push或者git pull即可，因为已经与远程的B分支绑定
+
 ## 2.修改本地的代码
 
 ## 3.使用git管理提交版本和记录
