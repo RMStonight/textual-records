@@ -428,6 +428,8 @@ revoke all on itcast.* from 'heima'@'%';
 
 ## docker中的安装使用
 
+[返回](#基础知识)
+
 获取指定版本的mysql镜像
 
 ```sh
