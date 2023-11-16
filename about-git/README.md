@@ -36,7 +36,7 @@ git push origin <branch_same>
 git push -u origin 1:B
 ```
 
-之后，当位于本地的分支1时，只需git push或者git pull即可，因为已经与远程的B分支绑定
+之后，当位于本地的分支1时，只需git push或者git pull即可，因为已经与远程的分支B绑定。(git -u push或者pull本身不会执行一次push或pull操作)
 
 ## 2.修改本地的代码
 
@@ -50,8 +50,7 @@ git commit -m "提交描述"
 ## 4.将修改后的代码推送到远程仓库
 
 ```sh
-git push origin <branch_local>:<branch_remote>
-git push origin <branch_same>
+git push
 ```
 
 ## 5.特殊操作
