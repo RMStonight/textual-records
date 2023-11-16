@@ -2,7 +2,9 @@
 
 ↩️[返回主页]
 
-[docker相关点击此处](#docker中的安装使用)
+🫙[docker相关点击此处](#docker中的安装使用)
+
+🍙[更多mysql基础]
 
 ## 基础知识
 
@@ -453,3 +455,4 @@ docker exec -it mysql mysql -uroot -p
 
 [返回主页]:../README.md
 [B站黑马程序员]:https://www.bilibili.com/video/BV1Kr4y1i7ru?p=15&vd_source=9504fc54477a587558fbab1417ea6a08
+[更多mysql基础]:./more-basic-points/README.md

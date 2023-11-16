@@ -126,4 +126,4 @@ case使用小结：
 简单函数（我的理解是直接为变量名一一对应）：CASE [column_name] WHEN [value1] THEN [result1]... ELSE [default] END
 搜索函数（我的理解是分别设置不同的表达式）：CASE WHEN [expr] THEN [result1]... ELSE [default] END
 
-[返回mysql]:./more-basic-points/README.md
+[返回mysql]:../README.md
