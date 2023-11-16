@@ -1,4 +1,4 @@
-# git工具（GitHub）
+# git工具（以GitHub为例，Gitee操作基本相同）
 
 ↩️[返回主页]
 
@@ -36,7 +36,7 @@ git push origin <branch_same>
 git push -u origin 1:B
 ```
 
-之后，当位于本地的分支1时，只需git push或者git pull即可，因为已经与远程的分支B绑定。(git -u push或者pull本身不会执行一次push或pull操作)
+之后，当位于本地的分支1时，只需git push或者git pull即可，因为已经与远程的分支B绑定
 
 ## 2.修改本地的代码
 
