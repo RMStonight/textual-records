@@ -16,7 +16,7 @@ git clone git@github.com:xxxxx.git
 
 Github新建一个仓库
 git pull时，本地工程尽量不要有与上述新建仓库时附带的文件重名，否则可能要解决冲突
-git push时，如果本地仓库和远程仓库的分支不同名，需要手动分别指定
+git push时，如果本地仓库和远程仓库的分支不同名，需要手动分别指定。如果同名只需输入一个
 
 ```sh
 git init
