@@ -52,6 +52,18 @@ git push origin <branch_same>
 git status
 ```
 
+* 查看当前remote关联的仓库
+
+```sh
+git remote -v
+```
+
+* 解绑remote关联的仓库
+
+```sh
+git remote remove <remote-name>
+```
+
 * 查看所有分支
 
 ```sh
