@@ -14,29 +14,38 @@ git clone git@github.com:xxxxx.git
 
 ### 方式二：在本地的文件夹中创建一个git环境（并把已有的工程同步到新建的github仓库）
 
-Github新建一个仓库
-git pull时，本地工程尽量不要有与上述新建仓库时附带的文件重名，否则可能要解决冲突
-git push时，如果本地仓库和远程仓库的分支不同名，需要手动分别指定。如果同名只需输入一个
+Github新建一个仓库，不勾选add a readme file和add .gitignore
 
 ```sh
 git init
-git remote add origin git@github.com:xxxxx.git
-git pull origin <branch_remote>
 git add .
 git commit -m "first commit"
-git push origin <branch_local>:<branch_remote>
-git push origin <branch_same>
+git branch -M main
+git remote add origin git@github.com:XXX/XXX.git
+git push -u origin main
 ```
 
-注：_本地的各个分支（branch）可能与远程仓库branch不同名，数量也不同，所以git pull和git push指令都应该分别指定本地和远程branch。除非已经使用-u操作指定了本地的某个branch和远程的某个branch进行绑定_
+如上可以使得当前工作空间生成git环境，并将当前分支强制修改为main（因为github默认新建分支为main），然后通过-u使得当前分支与远程仓库的main绑定。后续在当前本地分支中，只需git push或者git pull即可，无需再指定origin main
 
-例如，如果远程仓库存在A,B,C分支，本地仓库存在1，2分支，希望将远程的B和本地的1绑定，那么可以如下操作：
+~~注：_本地的各个分支（branch）可能与远程仓库branch不同名，数量也不同，所以git pull和git push指令都应该分别指定本地和远程branch。除非已经使用-u操作指定了本地的某个branch和远程的某个branch进行绑定_~~
+
+~~例如，如果远程仓库存在A,B,C分支，本地仓库存在1，2分支，希望将远程的B和本地的1绑定，那么可以如下操作：~~
+
+~~```sh~~
+~~git push -u origin 1:B~~
+~~```~~
+
+~~之后，当位于本地的分支1时，只需git push或者git pull即可，因为已经与远程的分支B绑定~~
+
+### 额外的：
+
+如果想把一个本地已含有git环境的仓库同步至一个新建的github中的远程仓库
 
 ```sh
-git push -u origin 1:B
+git remote add origin git@github.com:XXX/XXX.git
+git branch -M main
+git push -u origin main
 ```
-
-之后，当位于本地的分支1时，只需git push或者git pull即可，因为已经与远程的分支B绑定
 
 ## 2.修改本地的代码
 
