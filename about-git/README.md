@@ -16,8 +16,11 @@ git clone git@github.com:xxxxx.git
 
 Github新建一个仓库，不勾选add a readme file和add .gitignore
 
+如果本地已有README，那么不需要执行echo "# This is a README" >> README
+
 ```sh
 git init
+echo "# This is a README" >> README.md
 git add .
 git commit -m "first commit"
 git branch -M main
