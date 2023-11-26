@@ -72,10 +72,6 @@ logger->error("This is an err msg");
 ### v.其他常用日志格式
 
 ```sh
-// Set the log file directory and name
-std::string logDir = "/home/slamopto/log_test";
-std::string logFile = "test.log";
-
 // Log an informational message
 spdlog::info("Welcome to spdlog!");
 spdlog::error("Some error message with arg: {}", 1);
