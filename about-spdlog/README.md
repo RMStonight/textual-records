@@ -14,13 +14,15 @@ cd spdlog && mkdir build && cd build
 cmake .. && make -j
 ```
 
-最新版本CMake需要版本3.11，如果编译时发生错误，建议先将git切换到v1.11.0的tag分支
+最新版本CMake需要版本3.11
 
 查看当前cmake版本
 
 ```sh
 cmake --version
 ```
+
+如果编译时发生错误，建议先将git切换到v1.11.0的tag分支
 
 ```sh
 git checkout v1.11.0
