@@ -4,6 +4,8 @@
 
 * [git基本指令]
 * [mysql学习记录]
+* [spdlog上手记录]
 
 [git基本指令]: ./about-git/
 [mysql学习记录]: ./about-mysql/
+[spdlog上手记录]: ./about-apdlog/
