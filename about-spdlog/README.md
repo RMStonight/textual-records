@@ -16,6 +16,12 @@ cmake .. && make -j
 
 最新版本CMake需要版本3.11，如果编译时发生错误，建议先将git切换到v1.11.0的tag分支
 
+查看当前cmake版本
+
+```sh
+cmake --version
+```
+
 ```sh
 git checkout v1.11.0
 ```
