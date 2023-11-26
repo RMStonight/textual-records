@@ -8,4 +8,4 @@
 
 [git基本指令]: ./about-git/
 [mysql学习记录]: ./about-mysql/
-[spdlog上手记录]: ./about-apdlog/
+[spdlog上手记录]: ./about-spdlog/
