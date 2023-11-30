@@ -67,6 +67,12 @@ logger->info("This is an info msg");
 logger->error("This is an err msg");
 ```
 
+_注：_ spdlog存储在缓冲区，需要达到4kb才会写入文件一次（或者关闭软件会直接写入。不能直接断电，直接断电似乎会丢失缓存区的日志）。如果想要在某些特定的logger->info或其他写入后即刻刷新，需要添加如下语句手动进行刷新
+
+```sh
+logger->flush();
+```
+
 ### iv.查看指定路径下的日志文件保存情况
 
 ### v.其他常用日志格式
