@@ -134,7 +134,7 @@ git push origin new_branch_name
 
 ## 6.关于merge
 
-例如main分支想要合并dev分支
+例如main分支想要合并dev分支，切换到main分支
 
 ```sh
 git merge dev
@@ -146,7 +146,7 @@ git merge dev
 git add <fileName>
 ```
 
-完成后提交一次
+全部解决后提交一次
 
 ```sh
 git commit -m <content>
@@ -156,6 +156,14 @@ git commit -m <content>
 
 ```sh
 git merge dev
+```
+
+本地完成合并后可以推送至远程仓库
+
+```sh
+git push
+or
+git push origin main
 ```
 
 [返回主页]:../README.md
