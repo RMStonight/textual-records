@@ -109,6 +109,12 @@ git branch <new_branch>
 git checkout <branch_name>
 ```
 
+* 创建并同时切换至新分支
+
+```sh
+git checkout -b <branch_name>
+```
+
 * 使用.gitignore文件来屏蔽不需要推送至远程仓库的文件
 
 * 取消git已经跟踪的文件
@@ -124,6 +130,32 @@ git branch -r
 git branch -m old_branch_name new_branch_name
 git push origin :old_branch_name
 git push origin new_branch_name
+```
+
+## 6.关于merge
+
+例如main分支想要合并dev分支
+
+```sh
+git merge dev
+```
+
+如果有冲突则解决冲突，并对所有冲突文件执行
+
+```sh
+git add <fileName>
+```
+
+完成后提交一次
+
+```sh
+git commit -m <content>
+```
+
+最后再次执行merge
+
+```sh
+git merge dev
 ```
 
 [返回主页]:../README.md
