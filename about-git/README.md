@@ -166,5 +166,15 @@ or
 git push origin main
 ```
 
+## 7.本地同时配置github和gitee
+
+参照：[GIT系列（八）git同时配置gitee和github]
+
+## 8.同时推送github和gitee
+
+参照：[Git同时推送多个远程仓库]
+
 [返回主页]:../README.md
 [CSDN]:https://blog.csdn.net/weixin_42310154/article/details/118340458
+[GIT系列（八）git同时配置gitee和github]:https://blog.csdn.net/qq_26849933/article/details/128292454?spm=1001.2101.3001.6650.2&utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7ERate-2-128292454-blog-122931544.235%5Ev38%5Epc_relevant_sort_base3&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7ERate-2-128292454-blog-122931544.235%5Ev38%5Epc_relevant_sort_base3&utm_relevant_index=5
+[Git同时推送多个远程仓库]:https://zhuanlan.zhihu.com/p/141941373
