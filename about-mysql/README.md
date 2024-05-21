@@ -29,32 +29,32 @@ SQL分类
 
 查看当前有哪些数据库
 
-```sh
+```mysql
 show databases
 ```
 
 创建数据库
 
-```sh
+```mysql
 create database <name>
 create database <name> if not exist
 ```
 
 切换到（使用）某个数据库
 
-```sh
+```mysql
 use <name>
 ```
 
 查看当前处于哪个数据库中
 
-```sh
+```mysql
 select database()
 ```
 
 删除数据库
 
-```sh
+```mysql
 drop database <name> if exist
 ```
 
@@ -62,37 +62,37 @@ drop database <name> if exist
 
 查看当前数据库所有的表
 
-```sh
+```mysql
 show tables
 ```
 
 创建表
 
-```sh
+```mysql
 create table 表名 (字段 字段类型，字段 字段类型)
 ```
 
 查看当前表的字段
 
-```sh
+```mysql
 desc <name>
 ```
 
 查询当前表的建表语句
 
-```sh
+```mysql
 show create table <name>
 ```
 
 表结构修改，添加字段/修改字段类型/修改字段名称及类型/删除字段/修改表名
 
-```sh
+```mysql
 alter table <name> add/modify/change/drop/rename to...
 ```
 
 删除表
 
-```sh
+```mysql
 drop table <name>
 ```
 
@@ -102,7 +102,7 @@ drop table <name>
 
 #### 添加数据
 
-```sh
+```mysql
 insert into employee(id, workno, name, gender, age, idcard, entrydate) values (1,'1','Itcast','男',10,'123456789012345678','2000-01-01') ;
 
 insert into employee values (2,'2','张无忌','男',18,'123456789012345670','2005-01-01') ;
@@ -116,19 +116,19 @@ select * from employee ;
 
 修改id为1的数据，将name修改为itheima
 
-```sh
+```mysql
 update employee set name = 'itheima' where id = 1;
 ```
 
 修改id为1的数据，将name修改为小昭，gender修改为女
 
-```sh
+```mysql
 update employee set name = '小昭', gender = '女' where id = 1;
 ```
 
 将所有的员工入职日期修改为2008-01-01
 
-```sh
+```mysql
 update employee set entrydate = '2008-01-01';
 ```
 
@@ -136,13 +136,13 @@ update employee set entrydate = '2008-01-01';
 
 删除gender为女的员工
 
-```sh
+```mysql
 delete from employee where gender = '女';
 ```
 
 删除所有员工
 
-```sh
+```mysql
 delete from employee;
 ```
 
@@ -152,7 +152,7 @@ delete from employee;
 
 #### 向名为emp的table填入数据，方便后续查询测试
 
-```sh
+```mysql
 insert into emp (id, workno, name, gender, age, idcard, workaddress, entrydate)
 value (1, '1', '柳岩', '女', 20, '123456789012345678', '北京', '2000-01-01'),
     (2, '2', '张无忌', '男', 18, '123456789012345670', '北京', '2005-09-01'),
@@ -176,27 +176,27 @@ value (1, '1', '柳岩', '女', 20, '123456789012345678', '北京', '2000-01-01'
 
 查询指定字段 name, workno, age 返回
 
-```sh
+```mysql
 select name,workno,age from emp;
 ```
 
 查询所有字段返回
 
-```sh
+```mysql
 select id, workno, name, gender, age, idcard, workaddress, entrydate from emp;
 select * from emp;
 ```
 
 查询所有员工的工作地址，起别名
 
-```sh
+```mysql
 select workaddress as '工作地址' from emp;
 select workaddress '工作地址' from emp;
 ```
 
 查询公司员工的上班地址（不要重复）
 
-```sh
+```mysql
 select distinct workaddress '工作地址' from emp;
 ```
 
@@ -204,44 +204,44 @@ select distinct workaddress '工作地址' from emp;
 
 查询年龄等于 88 的员工
 
-```sh
+```mysql
 select * from emp where age = 88;
 ```
 
 查询年龄小于 20 的员工信息
 
-```sh
+```mysql
 select * from emp where age < 20;
 ```
 
 查询年龄小于等于 20 的员工信息
 
-```sh
+```mysql
 select * from emp where age <= 20;
 ```
 
 查询没有身份证号的员工信息
 
-```sh
+```mysql
 select * from emp where idcard is null;
 ```
 
 查询有身份证号的员工信息
 
-```sh
+```mysql
 select * from emp where idcard is not null;
 ```
 
 查询年龄不等于 88 的员工信息
 
-```sh
+```mysql
 select * from emp where age != 88;
 select * from emp where age <> 88;
 ```
 
 查询年龄在15岁（包含） 到20岁（包含）之间的员工信息（使用between时不能交换最大和最小值的顺序）
 
-```sh
+```mysql
 select * from emp where age >= 15 && age <= 20;
 select * from emp where age >= 15 and age <= 20;
 select * from emp where age between 15 and 20;
@@ -249,26 +249,26 @@ select * from emp where age between 15 and 20;
 
 查询性别为 女 且年龄小于 25岁的员工信息
 
-```sh
+```mysql
 select * from emp where gender = '女' and age < 25;
 ```
 
 查询年龄等于18 或 20 或 40 的员工信息
 
-```sh
+```mysql
 select * from emp where age = 18 or age = 20 or age = 40;
 select * from emp where age in(18,20,40);
 ```
 
 查询姓名为两个字的员工信息
 
-```sh
+```mysql
 select * from emp where name like '__';
 ```
 
 查询身份证号最后一位是X的员工信息
 
-```sh
+```mysql
 select * from emp where idcard like '%X';
 select * from emp where idcard like '_________________X';
 ```
@@ -279,7 +279,7 @@ select * from emp where idcard like '_________________X';
 
 统计该企业员工数量
 
-```sh
+```mysql
 select count(*) from emp;
 select count(id) from emp;
 select count(idcard) from emp;
@@ -287,25 +287,25 @@ select count(idcard) from emp;
 
 统计该企业员工的平均年龄
 
-```sh
+```mysql
 select avg(age) from emp;
 ```
 
 统计该企业员工的最大年龄
 
-```sh
+```mysql
 select max(age) from emp;
 ```
 
 统计该企业员工的最小年龄
 
-```sh
+```mysql
 select min(age) from emp;
 ```
 
 统计西安地区员工的年龄之和
 
-```sh
+```mysql
 select sum(age) from emp where workaddress = '西安';
 ```
 
@@ -316,25 +316,25 @@ select sum(age) from emp where workaddress = '西安';
 
 根据性别分组,统计男性员工 和 女性员工的数量
 
-```sh
+```mysql
 select gender,count(*) from emp group by gender;
 ```
 
 根据性别分组,统计男性员工 和 女性员工的平均年龄
 
-```sh
+```mysql
 select gender,avg(age) from emp group by gender;
 ```
 
 查询年龄小于45的员工, 并根据工作地址分组,获取员工数量大于等于3的工作地址
 
-```sh
+```mysql
 select workaddress,count(*) from emp where age < 45 group by workaddress having count(*) >= 3;
 ```
 
 -- 特殊操作，在使用group by时如果不能显示其他字段,需要修改sql_mode
 
-```sh
+```mysql
 select @@global.sql_mode;
 SET sql_mode=(SELECT REPLACE(@@sql_mode,'ONLY_FULL_GROUP_BY',''));
 ```
@@ -343,19 +343,19 @@ SET sql_mode=(SELECT REPLACE(@@sql_mode,'ONLY_FULL_GROUP_BY',''));
 
 根据年龄对公司的员工进行升序排序
 
-```sh
+```mysql
 select * from emp order by age;
 ```
 
 根据入职时间，对员工进行降序排序
 
-```sh
+```mysql
 select * from emp order by entrydate desc;
 ```
 
 根据年龄对公司的员工进行升序排序，年龄相同，再按入职时间进行降序排序
 
-```sh
+```mysql
 select * from emp order by age, entrydate desc;
 ```
 
@@ -364,14 +364,14 @@ select * from emp order by age, entrydate desc;
 -- select 字段列表 from 表名 limit 起始索引，查询记录数；
 查询第1页员工数据，每页显示10条记录
 
-```sh
+```mysql
 select * from emp limit 0,10;
 select * from emp limit 10;
 ```
 
 查询第2页员工数据，每页展示10条记录
 
-```sh
+```mysql
 select * from emp limit 10,10;
 ```
 
@@ -386,25 +386,25 @@ from 表名 > where 条件列表 > group by 分组字段列表 > having 分组�
 
 创建用户 itcast，只能够在当前主机hocalhost访问，密码123456
 
-```sh
+```mysql
 create user 'itcast'@'localhost' identified by '123456';
 ```
 
 创建用户heima，可以在任意主机访问该数据库，密码123456
 
-```sh
+```mysql
 create user 'heima'@'%' identified by '123456';
 ```
 
 修改用户 heima 的访问密码为 1234
 
-```sh
+```mysql
 alter user 'heima'@'%' identified with mysql_native_password by '1234';
 ```
 
 删除itcast@hlocalhost用户
 
-```sh
+```mysql
 drop user 'itcast'@'localhost';
 ```
 
@@ -412,19 +412,19 @@ drop user 'itcast'@'localhost';
 
 查询权限
 
-```sh
+```mysql
 show grants for 'heima'@'%';
 ```
 
 授予权限
 
-```sh
+```mysql
 grant all on itcast.* to 'heima'@'%';
 ```
 
 撤销权限
 
-```sh
+```mysql
 revoke all on itcast.* from 'heima'@'%';
 ```
 
