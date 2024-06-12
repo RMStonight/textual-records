@@ -51,7 +51,14 @@
 
 ### 2.3.额外说明
 
-1. 对于mysql系统，可以直接使用arm64架构的镜像，开发端和应用端的数据交互可以通过.sql文件来实现。具体可参考，[linux导出导入.sql文件]。
+1. 对于mysql系统，可以直接使用arm64架构的镜像，开发端和应用端的数据交互可以通过sql文件来实现。具体可参考，[linux导出导入sql文件]。
+
+2. 对于js开发，例如使用vue编译。可以使用arm64架构的镜像。不过需要注意的是node_modules需要在对应镜像执行安装才可用。
+    ```sh
+    npm install
+    ```
+3. 如果使用dockerfile来创建新镜像，那么文件中涉及安装不同架构安装包或者程序的语句，需要修改架构。若是没有对应架构的安装包或者程序的，需要查找其他安装的办法，包括源码编译等
+
 
 [返回主页]:../README.md
-[linux导出导入.sql文件]:https://blog.csdn.net/guo_qiangqiang/article/details/85789735
+[linux导出导入sql文件]:https://blog.csdn.net/guo_qiangqiang/article/details/85789735
