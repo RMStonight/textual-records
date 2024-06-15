@@ -60,6 +60,64 @@
     ```
 3. 如果使用dockerfile来创建新镜像，那么文件中涉及安装不同架构安装包或者程序的语句，需要修改架构。若是没有对应架构的安装包或者程序的，需要查找其他安装的办法，包括源码编译等
 
+## 3.杂项记录
+
+### 3.1.QT6安装使用webengine
+
+尝试brew直接安装失败，因此尝试使用源码编译安装：
+
+```sh
+wget https://download.qt.io/official_releases/qt/6.6/6.6.0/submodules/qtwebengine-everywhere-src-6.6.0.tar.xz
+tar -xf qtwebengine-everywhere-src-6.6.0.tar.xz
+mkdir qtwebengine-everywhere-src-6.6.0/build && cd qtwebengine-everywhere-src-6.6.0/build
+```
+
+没有cmake、xcode和ninja的话需要先安装
+
+```sh
+brew install cmake
+xcode-select --install
+brew install ninja
+```
+
+然后编译并安装
+
+```sh
+cmake .. -G "Ninja" \
+    -DCMAKE_PREFIX_PATH=/opt/homebrew/opt/qt \
+    -DCMAKE_C_COMPILER=$(which clang) \
+    -DCMAKE_CXX_COMPILER=$(which clang++) \
+    -DCMAKE_MAKE_PROGRAM=$(which ninja)
+ninja
+ninja install
+```
+
+**使用webengine**
+pro工程文件中添加
+
+```pro
+QT += core gui webenginewidgets
+```
+
+h头文件引入
+
+```cpp
+#include <QWebEngineView>
+QWebEngineView *webEngineView;
+```
+
+cpp文件中使用
+
+```cpp
+ui->setupUi(this);
+
+// 创建 QWebEngineView 并将其添加到主窗口
+webEngineView = new QWebEngineView(this);
+setCentralWidget(webEngineView);
+
+// 加载网页
+webEngineView->load(QUrl("https://www.example.com"));
+```
 
 [返回主页]:../README.md
 [linux导出导入sql文件]:https://blog.csdn.net/guo_qiangqiang/article/details/85789735
