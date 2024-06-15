@@ -37,6 +37,7 @@
 
 * oh-my-zsh (美化mac的zsh终端并安装好用的插件：zsh-autosuggestions、zsh-syntax-highlighting)
 * Homebrew (包管理器，类似于ubuntu的apt)
+* qt (使用brew安装qt和qt-creator)([Mac安装并配置qt])
 
 ## 2.docker相关
 
@@ -62,3 +63,4 @@
 
 [返回主页]:../README.md
 [linux导出导入sql文件]:https://blog.csdn.net/guo_qiangqiang/article/details/85789735
+[Mac安装并配置qt]:https://blog.csdn.net/weixin_46958677/article/details/130271259
