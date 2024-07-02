@@ -32,6 +32,9 @@
 * LocalSend (局域网内文件传输)
 * Snipaste (截图)
 * Scroll Reverser (外接鼠标时，修正鼠标滚轮反向的问题)
+* Parallels Desktop (虚拟机，安装win11和linux，某宝100+破解。qt相关的建议都安装arm版本的系统，arm版的win11可使用很多amd64版软件，qt做的软件也可以直接在其他amd64的win中使用。ubuntu下的qt软件，尝试交叉编译失败，建议arm版上开发后，在amd64的ubuntu中再重新编译生成对应软件)
+* Todesk（公网远程）
+* Nomachine（局域网远程）
 
 ### 1.3.终端指令
 
